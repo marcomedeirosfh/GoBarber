@@ -1,5 +1,5 @@
 import React from 'react';
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FiLogIn, FiArrowLeft, FiUser, FiMail, FiLock } from 'react-icons/fi';
 
 import logoImg from '../../assets/logo.svg';
 
@@ -8,14 +8,16 @@ import Button from '../../components/Button';
 
 import { Container, Content, Background } from './styles';
 
-const SignIn: React.FC = () => (
+const SignUp: React.FC = () => (
   <Container>
+    <Background />
     <Content>
       <img src={logoImg} alt="GoBarber" />
 
       <form>
-        <h1>Please Login</h1>
+        <h1>Register</h1>
 
+        <Input name="name" icon={FiUser} placeholder="Name" />
         <Input name="email" icon={FiMail} placeholder="E-mail" />
 
         <Input
@@ -25,18 +27,15 @@ const SignIn: React.FC = () => (
           placeholder="Password"
         />
 
-        <Button type="submit">Login</Button>
-
-        <a href="forgot">Forgot password</a>
+        <Button type="submit">Register</Button>
       </form>
 
-      <a href="register">
-        <FiLogIn />
-        Create Account
+      <a href="login">
+        <FiArrowLeft />
+        Back to Login Page
       </a>
     </Content>
-    <Background />
   </Container>
 );
 
-export default SignIn;
+export default SignUp;
